@@ -1,0 +1,58 @@
+public class Veiculo {
+    public String modelo;
+    public String marca;
+    public int anoFabricacao;
+
+    public Veiculo(String modelo, String marca, int anoFabricacao) {
+        this.modelo = modelo;
+        this.marca = marca;
+        this.anoFabricacao = anoFabricacao;
+    }
+
+    public void imprimir() {
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Marca: " + marca);
+        System.out.println("Ano de Fabricação: " + anoFabricacao);
+    }
+
+    public int calcularIdade(int anoAtual) {
+        return anoAtual - anoFabricacao;
+    }
+}
+
+public class Principal {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o modelo do veículo: ");
+
+        String modelo = scanner.nextLine();
+
+        System.out.print("Digite a marca do veículo: ");
+
+        String marca = scanner.nextLine();
+
+        System.out.print("Digite o ano de fabricação do veículo: ");
+
+        int anoFabricacao = scanner.nextInt();
+
+        Veiculo veiculo = new Veiculo(modelo, marca, anoFabricacao);
+
+        System.out.println("\nDados do veículo:");
+
+        veiculo.imprimir();
+
+        System.out.print("\nDigite o ano atual: ");
+
+        int anoAtual = scanner.nextInt();
+
+        int idadeVeiculo = veiculo.calcularIdade(anoAtual);
+
+        System.out.println("Idade do veículo: " + idadeVeiculo + " ano(s)");
+
+        scanner.close();
+     }
+
+}
